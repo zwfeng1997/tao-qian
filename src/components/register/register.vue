@@ -40,7 +40,6 @@ export default{
       this.statusMsg = ''
     },
     Register() {
-      console.log('aa')
       if (this.sele) {
         let self = this
         this.axios.post('/api/users/signup', {

@@ -8,6 +8,8 @@ import Details from '../page/Details/index'
 import Evaluate from '../page/Evaluate/index'
 import Write from '../page/Write/index'
 import Add from '../page/Add/addEvaluate'
+import Picture from '../page/Picture/index'
+import UserImg from '../page/Picture/userImg.vue'
 
 export default [
   {
@@ -18,6 +20,16 @@ export default [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/picture',
+    name: 'Picture',
+    component: Picture
+  },
+  {
+    path: '/userImg',
+    name: 'UserImg',
+    component: UserImg
   },
   {
     path: '/register',

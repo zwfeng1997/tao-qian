@@ -2,10 +2,10 @@
   <div class="personal-center">
     <h2 class="header">我的账号</h2>
     <div class="content">
-      <div class="item border-bottom">
+      <div class="item border-bottom" @click="userImg">
         <div class="font">我的头像</div>
         <i class="iconfont">&#xe70c;</i>
-        <img src="../../assets/images/user.jpg" alt="">
+        <img :src="this.$store.state.userImg" alt="">
       </div>
       <div class="item border-bottom">
         <div class="font">昵称</div>
@@ -43,6 +43,21 @@ export default {
     }
   },
   methods: {
+    userImg () {
+      MessageBox({
+        title: '提示',
+        message: '是否更换头像?',
+        showCancelButton: true
+      }).then(action => {
+        if (action == 'confirm') {
+          location.href = '/userImg'
+        }
+      }).catch(err => {
+        if (err == 'cancel') {
+          console.log(2);
+        }
+      })
+    },
     signOut () {
       MessageBox({
         title: '提示',
@@ -108,6 +123,7 @@ export default {
         img
           float right
           width 40px
+          height 40px
           margin-right 15px
           margin-top 5px
           border-radius 50%

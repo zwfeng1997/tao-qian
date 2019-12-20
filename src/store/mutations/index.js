@@ -71,6 +71,9 @@ export default {
   getUser (state, index) {
     state.user = index
   },
+  getUserImg (state, index) {
+    state.userImg = index
+  },
   empty (state) {
     state.allState = false
     state.id = ''
